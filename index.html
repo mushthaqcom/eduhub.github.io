@@ -108,7 +108,7 @@
         }
         
         .hero-gradient {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #fcd34d;
         }
         
         .card-hover {
@@ -187,8 +187,40 @@
             width: 50px !important;
         }
         
+        .nav-logo {
+            filter: brightness(0);
+            transition: filter 0.3s ease;
+        }
+        
+        .nav-scrolled .nav-logo {
+            filter: brightness(1);
+        }
+        
         .testimonial-dot.active {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .gallery-tab-btn {
+            color: #6b7280;
+        }
+        
+        .gallery-tab-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .gallery-tab-btn:hover:not(.active) {
+            background: #f3f4f6;
+            color: #374151;
+        }
+        
+        .gallery-tab-content {
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        .gallery-tab-content.hidden {
+            display: none;
         }
     </style>
 </head>
@@ -201,15 +233,15 @@
                     <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/logo.png" alt="Eduhub Academy" class="nav-logo h-20 w-20 md:h-20 md:w-20 h-12 w-12 sm:h-12 sm:w-12 transition-all duration-300">
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="nav-link text-white hover:text-gray-200 text-sm font-medium transition-colors">Home</a>
-                    <a href="#about" class="nav-link text-white hover:text-gray-200 text-sm font-medium transition-colors">About</a>
-                    <a href="#principal" class="nav-link text-white hover:text-gray-200 text-sm font-medium transition-colors">Principal</a>
-                    <a href="#testimonials" class="nav-link text-white hover:text-gray-200 text-sm font-medium transition-colors">Testimonials</a>
-                    <a href="#gallery" class="nav-link text-white hover:text-gray-200 text-sm font-medium transition-colors">Gallery</a>
-                    <a href="#contact" class="nav-link text-white hover:text-gray-200 text-sm font-medium transition-colors">Contact</a>
+                    <a href="#home" class="nav-link text-gray-900 hover:text-gray-700 text-sm font-medium transition-colors">Home</a>
+                    <a href="#about" class="nav-link text-gray-900 hover:text-gray-700 text-sm font-medium transition-colors">About</a>
+                    <a href="#director" class="nav-link text-gray-900 hover:text-gray-700 text-sm font-medium transition-colors">Director</a>
+                    <a href="#testimonials" class="nav-link text-gray-900 hover:text-gray-700 text-sm font-medium transition-colors">Testimonials</a>
+                    <a href="#gallery" class="nav-link text-gray-900 hover:text-gray-700 text-sm font-medium transition-colors">Gallery</a>
+                    <a href="#contact" class="nav-link text-gray-900 hover:text-gray-700 text-sm font-medium transition-colors">Contact</a>
                 </div>
                 <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="nav-link text-white hover:text-gray-200">
+                    <button id="mobile-menu-btn" class="nav-link text-gray-900 hover:text-gray-700">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
@@ -222,7 +254,7 @@
             <div class="px-6 pt-4 pb-6 space-y-4">
                 <a href="#home" class="block text-gray-700 hover:text-gray-900 text-sm font-medium">Home</a>
                 <a href="#about" class="block text-gray-700 hover:text-gray-900 text-sm font-medium">About</a>
-                <a href="#principal" class="block text-gray-700 hover:text-gray-900 text-sm font-medium">Principal</a>
+                <a href="#director" class="block text-gray-700 hover:text-gray-900 text-sm font-medium">Director</a>
                 <a href="#testimonials" class="block text-gray-700 hover:text-gray-900 text-sm font-medium">Testimonials</a>
                 <a href="#gallery" class="block text-gray-700 hover:text-gray-900 text-sm font-medium">Gallery</a>
                 <a href="#contact" class="block text-gray-700 hover:text-gray-900 text-sm font-medium">Contact</a>
@@ -231,8 +263,8 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center hero-gradient text-white relative overflow-hidden">
-        <div class="absolute inset-0 bg-black opacity-20"></div>
+    <section id="home" class="min-h-screen flex items-center hero-gradient text-gray-900 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-10"></div>
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
             <div class="text-center">
                 <h1 class="text-5xl md:text-7xl font-light mb-8 fade-in leading-tight">
@@ -243,10 +275,10 @@
                     Empowering minds, shaping futures. Where knowledge meets innovation and dreams become reality.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-6 justify-center fade-in stagger-2">
-                    <a href="#about" class="btn-primary text-white px-8 py-4 rounded-full font-medium text-lg inline-block">
+                    <a href="#about" class="bg-gray-900 text-white px-8 py-4 rounded-full font-medium text-lg hover:bg-gray-800 transition-all duration-300 inline-block">
                         Discover More
                     </a>
-                    <a href="#contact" class="border-2 border-white text-white px-8 py-4 rounded-full font-medium text-lg hover:bg-white hover:text-gray-900 transition-all duration-300 inline-block">
+                    <a href="#contact" class="border-2 border-gray-900 text-gray-900 px-8 py-4 rounded-full font-medium text-lg hover:bg-gray-900 hover:text-white transition-all duration-300 inline-block">
                         Get Started
                     </a>
                 </div>
@@ -301,11 +333,11 @@
         </div>
     </section>
 
-    <!-- Principal Section -->
-    <section id="principal" class="section-padding bg-white">
+    <!-- Director Section -->
+    <section id="director" class="section-padding bg-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-light mb-6 text-gradient">Meet Our Principal</h2>
+                <h2 class="text-4xl md:text-5xl font-light mb-6 text-gradient">Meet Our Director</h2>
                 <p class="text-xl text-gray-600 font-light">Leading with vision, inspiring with passion</p>
             </div>
             
@@ -314,10 +346,10 @@
                     <div class="grid lg:grid-cols-3 gap-12 items-center">
                         <div class="text-center lg:text-left">
                             <div class="w-64 h-64 mx-auto lg:mx-0 mb-8">
-                                <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/684.jpg" alt="Principal" class="w-full h-full rounded-full object-cover shadow-2xl">
+                                <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/684.jpg" alt="Director" class="w-full h-full rounded-full object-cover shadow-2xl">
                             </div>
                             <h3 class="text-2xl font-semibold mb-2">Thariq Faiz</h3>
-                            <p class="text-gradient font-medium text-lg">Principal</p>
+                            <p class="text-gradient font-medium text-lg">Director</p>
                         </div>
                         <div class="lg:col-span-2">
                             <blockquote class="text-xl text-gray-700 italic mb-8 font-light leading-relaxed">
@@ -423,57 +455,165 @@
     <section id="gallery" class="section-padding bg-gray-50">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-light mb-6 text-gradient">Campus Gallery</h2>
-                <p class="text-xl text-gray-600 font-light">Explore our beautiful campus and vibrant student life</p>
+                <h2 class="text-4xl md:text-5xl font-light mb-6 text-gradient">Academy Gallery</h2>
+                <p class="text-xl text-gray-600 font-light">Explore our beautiful academy and vibrant student life</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="group cursor-pointer">
-                    <div class="bg-white rounded-3xl p-6 card-hover">
-                        <div class="overflow-hidden rounded-2xl mb-6">
-                            <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/6854.jpg" alt="Campus View" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+            <!-- Gallery Tabs -->
+            <div class="flex justify-center mb-12">
+                <div class="bg-white rounded-full p-2 shadow-lg">
+                    <button class="gallery-tab-btn active px-8 py-3 rounded-full font-medium transition-all duration-300" data-tab="academy">
+                        Academy
+                    </button>
+                    <button class="gallery-tab-btn px-8 py-3 rounded-full font-medium transition-all duration-300" data-tab="students">
+                        Student Life
+                    </button>
+                    <button class="gallery-tab-btn px-8 py-3 rounded-full font-medium transition-all duration-300" data-tab="practicals">
+                        Practicals
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Academy Tab Content -->
+            <div class="gallery-tab-content active" id="academy-tab">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="group cursor-pointer">
+                        <div class="bg-white rounded-3xl p-6 card-hover">
+                            <div class="overflow-hidden rounded-2xl">
+                                <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/6854.jpg" alt="Main Academy Building" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900">Main Campus</h3>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <div class="bg-white rounded-3xl p-6 card-hover">
+                            <div class="overflow-hidden rounded-2xl">
+                                <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/16514.jpg" alt="Academy Facilities" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <div class="bg-white rounded-3xl p-6 card-hover">
+                            <div class="overflow-hidden rounded-2xl">
+                                <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/image.png" alt="Learning Environment" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="group cursor-pointer">
-                    <div class="bg-white rounded-3xl p-6 card-hover">
-                        <div class="overflow-hidden rounded-2xl mb-6">
-                            <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/image.png" alt="Library" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            
+            <!-- Student Life Tab Content -->
+            <div class="gallery-tab-content hidden" id="students-tab">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="group cursor-pointer">
+                        <div class="bg-white rounded-3xl p-6 card-hover">
+                            <div class="overflow-hidden rounded-2xl">
+                                <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/students-life/IMG-20250722-WA0016.jpg" alt="Student Activities" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900">Modern Library</h3>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <div class="bg-white rounded-3xl p-6 card-hover">
+                            <div class="overflow-hidden rounded-2xl">
+                                <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/students-life/IMG-20250722-WA0017.jpg" alt="Classroom Learning" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <div class="bg-white rounded-3xl p-6 card-hover">
+                            <div class="overflow-hidden rounded-2xl">
+                                <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/students-life/IMG-20250722-WA0031.jpg" alt="Group Studies" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <div class="bg-white rounded-3xl p-6 card-hover">
+                            <div class="overflow-hidden rounded-2xl">
+                                <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/students-life/IMG-20250808-WA0012.jpg" alt="Student Engagement" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <div class="bg-white rounded-3xl p-6 card-hover">
+                            <div class="overflow-hidden rounded-2xl">
+                                <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/students-life/IMG-20250808-WA0013.jpg" alt="Interactive Learning" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="group cursor-pointer">
-                    <div class="bg-white rounded-3xl p-6 card-hover">
-                        <div class="overflow-hidden rounded-2xl mb-6">
-                            <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/image.png" alt="Laboratory" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            
+            <!-- Practicals Tab Content -->
+            <div class="gallery-tab-content hidden" id="practicals-tab">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="group cursor-pointer">
+                        <div class="bg-white rounded-3xl p-6 card-hover">
+                            <div class="overflow-hidden rounded-2xl">
+                                <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/practicals/IMG-20250722-WA0032.jpg" alt="Science Practicals" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900">Science Laboratory</h3>
                     </div>
-                </div>
-                <div class="group cursor-pointer">
-                    <div class="bg-white rounded-3xl p-6 card-hover">
-                        <div class="overflow-hidden rounded-2xl mb-6">
-                            <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/image.png" alt="Sports" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="group cursor-pointer">
+                        <div class="bg-white rounded-3xl p-6 card-hover">
+                            <div class="overflow-hidden rounded-2xl">
+                                <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/practicals/IMG-20250722-WA0038.jpg" alt="Laboratory Work" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900">Sports Complex</h3>
                     </div>
-                </div>
-                <div class="group cursor-pointer">
-                    <div class="bg-white rounded-3xl p-6 card-hover">
-                        <div class="overflow-hidden rounded-2xl mb-6">
-                            <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/image.png" alt="Auditorium" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="group cursor-pointer">
+                        <div class="bg-white rounded-3xl p-6 card-hover">
+                            <div class="overflow-hidden rounded-2xl">
+                                <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/practicals/IMG-20250808-WA0014.jpg" alt="Hands-on Learning" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900">Auditorium</h3>
                     </div>
-                </div>
-                <div class="group cursor-pointer">
-                    <div class="bg-white rounded-3xl p-6 card-hover">
-                        <div class="overflow-hidden rounded-2xl mb-6">
-                            <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/image.png" alt="Students" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="group cursor-pointer">
+                        <div class="bg-white rounded-3xl p-6 card-hover">
+                            <div class="overflow-hidden rounded-2xl">
+                                <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/practicals/IMG-20250808-WA0015.jpg" alt="Experimental Work" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900">Student Life</h3>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <div class="bg-white rounded-3xl p-6 card-hover">
+                            <div class="overflow-hidden rounded-2xl">
+                                <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/practicals/IMG-20250808-WA0016.jpg" alt="Research Activities" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <div class="bg-white rounded-3xl p-6 card-hover">
+                            <div class="overflow-hidden rounded-2xl">
+                                <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/practicals/IMG-20250808-WA0017.jpg" alt="Lab Experiments" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <div class="bg-white rounded-3xl p-6 card-hover">
+                            <div class="overflow-hidden rounded-2xl">
+                                <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/practicals/IMG-20250808-WA0018.jpg" alt="Scientific Methods" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <div class="bg-white rounded-3xl p-6 card-hover">
+                            <div class="overflow-hidden rounded-2xl">
+                                <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/practicals/IMG-20250808-WA0019.jpg" alt="Practical Sessions" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <div class="bg-white rounded-3xl p-6 card-hover">
+                            <div class="overflow-hidden rounded-2xl">
+                                <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/practicals/IMG-20250808-WA0020.jpg" alt="Applied Learning" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <div class="bg-white rounded-3xl p-6 card-hover">
+                            <div class="overflow-hidden rounded-2xl">
+                                <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/practicals/IMG-20250808-WA0021.jpg" alt="Technical Skills" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -481,14 +621,14 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="section-padding hero-gradient text-white relative overflow-hidden">
-        <div class="absolute inset-0 bg-black opacity-20"></div>
+    <section class="section-padding hero-gradient text-gray-900 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-10"></div>
         <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-10">
             <h2 class="text-4xl md:text-5xl font-light mb-8">Ready to Start Your Journey?</h2>
             <p class="text-xl font-light mb-12 max-w-3xl mx-auto opacity-90">
                 Join thousands of students who have transformed their lives through quality education at Eduhub Academy
             </p>
-            <a href="#contact" class="bg-white text-gray-900 px-10 py-4 rounded-full font-medium text-lg hover:bg-gray-100 transition-all duration-300 inline-block hover:transform hover:-translate-y-1">
+            <a href="#contact" class="bg-gray-900 text-white px-10 py-4 rounded-full font-medium text-lg hover:bg-gray-800 transition-all duration-300 inline-block hover:transform hover:-translate-y-1">
                 Apply Now
             </a>
         </div>
@@ -552,7 +692,7 @@
                     <div class="p-8">
                         <div class="flex items-center justify-between">
                             <div>
-                                <p class="text-gray-600 mb-2 font-light">Visit us at our campus location</p>
+                                <p class="text-gray-600 mb-2 font-light">Visit us at our academy location</p>
                                 <p class="font-semibold text-gray-900">344/12 Peradeniya Rd, Kandy 20000</p>
                             </div>
                             <a href="https://maps.google.com/?q=344/12+Peradeniya+Rd,+Kandy+20000,+Sri+Lanka" 
@@ -572,7 +712,7 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-12">
                 <div class="md:col-span-2">
-                    <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/logo.png" alt="Eduhub Academy" class="h-20 w-20 mb-6">
+                    <img src="https://raw.githubusercontent.com/mushthaqcom/eduhub.github.io/refs/heads/main/images/logo.png" alt="Eduhub Academy" class="h-20 w-20 mb-6" style="filter: brightness(0) invert(1);">
                     <p class="text-gray-300 mb-6 font-light text-lg leading-relaxed">
                         Empowering minds, shaping futures. Excellence in education since 2014.
                     </p>
@@ -593,7 +733,7 @@
                     <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
                     <ul class="space-y-3">
                         <li><a href="#about" class="text-gray-400 hover:text-white transition-colors font-light">About Us</a></li>
-                        <li><a href="#principal" class="text-gray-400 hover:text-white transition-colors font-light">Principal</a></li>
+                        <li><a href="#director" class="text-gray-400 hover:text-white transition-colors font-light">Director</a></li>
                         <li><a href="#testimonials" class="text-gray-400 hover:text-white transition-colors font-light">Testimonials</a></li>
                         <li><a href="#gallery" class="text-gray-400 hover:text-white transition-colors font-light">Gallery</a></li>
                         <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors font-light">Contact</a></li>
@@ -720,6 +860,34 @@
 
         // Auto-play testimonials
         setInterval(nextTestimonial, 5000);
+
+        // Gallery Tabs
+        const galleryTabBtns = document.querySelectorAll('.gallery-tab-btn');
+        const galleryTabContents = document.querySelectorAll('.gallery-tab-content');
+
+        galleryTabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetTab = btn.getAttribute('data-tab');
+                
+                // Remove active class from all buttons
+                galleryTabBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Hide all tab contents
+                galleryTabContents.forEach(content => {
+                    content.classList.add('hidden');
+                    content.classList.remove('active');
+                });
+                
+                // Show target tab content
+                const targetContent = document.getElementById(targetTab + '-tab');
+                if (targetContent) {
+                    targetContent.classList.remove('hidden');
+                    targetContent.classList.add('active');
+                }
+            });
+        });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96bf7e3136903a08',t:'MTc1NDY2MTEzMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96bfc8456219ac8d',t:'MTc1NDY2NDE2Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
